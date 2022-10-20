@@ -16,7 +16,8 @@ Notice: Requires at least gleam 0.0.0-nightly-221019 or gleam 0.24.
 3. Run the benchmark. `bin/glychee_example_benchmark_call.sh` in this library shows an example on how do do it:
 
    ```sh
-   erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(glychee_example_custom_benchmark_module)'
+   erl -pa ./build/dev/erlang/*/ebin -noshell -eval \
+     'gleam@@main:run(glychee_example_custom_benchmark_module)';
    ```
 
 ## Installation
