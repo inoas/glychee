@@ -11,29 +11,29 @@
 //// import gleam/int
 ////
 //// pub fn main() {
-//// 	benchmark.run(
-//// 		[
-//// 			benchmark.Function(
-//// 				label: "list.sort()",
-//// 				fun: fn(test_data) {
+////   benchmark.run(
+////     [
+////       benchmark.Function(
+////         label: "list.sort()",
+////         fun: fn(test_data) {
 ////          fn() {
 ////            list.sort(test_data, int.compare)
 ////          }
 ////        },
-//// 			),
-//// 		],
-//// 		[
-//// 			benchmark.Data(
+////       ),
+////     ],
+////     [
+////       benchmark.Data(
 ////        label: "pre-sorted list",
 ////        data: list.range(1, 100_000)
 ////      ),
-//// 			benchmark.Data(
-//// 				label: "reversed list",
-//// 				data: list.range(1, 100_000)
-//// 				|> list.reverse,
-//// 			)
-//// 		],
-//// 	)
+////       benchmark.Data(
+////         label: "reversed list",
+////         data: list.range(1, 100_000)
+////         |> list.reverse,
+////       )
+////     ],
+////   )
 //// }
 //// ```
 ////
