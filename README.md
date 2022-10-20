@@ -7,7 +7,7 @@ A simple gleam benchmark runner which wraps <https://github.com/bencheeorg/bench
 
 ## Quick start
 
-Notice: Requires at least gleam 0.0.0-nightly-221019 or gleam 0.24.
+_Notice: Requires at least gleam 0.24 (or gleam 0.0.0-nightly-221019 or later)._
 
 1. Add glychee to your project: `gleam add glychee`.
 2. Create a a custom benchmarking module that contains a `main`-function.
