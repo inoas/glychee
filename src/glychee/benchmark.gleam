@@ -1,6 +1,6 @@
 //// Benchmark
 ////
-//// Contain's custom types and runner function to process those
+//// Contain's custom types and a runner function to process those.
 ////
 //// ### Example
 ////
@@ -15,11 +15,18 @@
 //// 		[
 //// 			benchmark.Function(
 //// 				label: "list.sort()",
-//// 				fun: fn(test_data) { fn() { list.sort(test_data, int.compare) } },
+//// 				fun: fn(test_data) {
+////          fn() {
+////            list.sort(test_data, int.compare)
+////          }
+////        },
 //// 			),
 //// 		],
 //// 		[
-//// 			benchmark.Data(label: "pre-sorted list", data: list.range(1, 100_000)),
+//// 			benchmark.Data(
+////        label: "pre-sorted list",
+////        data: list.range(1, 100_000)
+////      ),
 //// 			benchmark.Data(
 //// 				label: "reversed list",
 //// 				data: list.range(1, 100_000)
@@ -60,12 +67,11 @@ pub type Data(data) {
   Data(label: String, data: data)
 }
 
-/// Takes a List of Function and List of Data and runs
-/// benchmarks for each Function combined with each Data
-/// grouped by Data first and Function second.
+/// Takes a List of Function and List of Data and runs benchmarks for each
+/// Function combined with each Data grouped by Data first and Function
+/// second.
 ///
-/// Utilized Benchee and its's stdout output for the
-/// function benchmarking.
+/// Utilized Benchee and its's stdout output for the function benchmarking.
 ///
 pub fn run(
   function_sets: List(Function(test_data, any)),
@@ -92,7 +98,7 @@ pub fn run(
   )
 }
 
-/// Wrapper into Elixir's Benchee
+/// Wrapper for Elixir's Benchee
 ///
 external fn benchee_wrapper_run(List(#(String, any))) -> any =
   "Elixir.GlycheeBenchee" "run"
