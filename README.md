@@ -9,6 +9,8 @@ A simple gleam benchmark runner which wraps <https://github.com/bencheeorg/bench
 
 _Notice: Requires at least gleam 0.24 (or gleam 0.0.0-nightly-221019 or later)._
 
+Also requires elixir and hex to be installed. You might be required to run `mix local.hex` after installing elixir.
+
 1. Add glychee to your project: `gleam add glychee`.
 2. Create a a custom benchmarking module that contains a `main`-function.
    See `glychee_example_custom_benchmark_module.gleam` as an example.
