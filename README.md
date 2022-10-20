@@ -71,8 +71,7 @@ Then run via:
 ```sh
 gleam clean && \
 gleam build && \
-erl -pa ./build/dev/erlang/*/ebin -noshell \
-  -eval 'gleam@@main:run(benchmark)'
+erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(benchmark)'
 ```
 
 ## Installation
@@ -84,3 +83,7 @@ gleam add glychee
 ```
 
 Glychee's documentation can be found at <https://hexdocs.pm/glychee>.
+
+## License
+
+Apache 2.0

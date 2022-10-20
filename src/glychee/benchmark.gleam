@@ -39,11 +39,10 @@
 ////
 //// Run via:
 ////
-//// ```sh
+//// ```
 //// gleam clean && \
 //// gleam build && \
-//// erl -pa ./build/dev/erlang/*/ebin -noshell \
-////   -eval 'gleam@@main:run(benchmark)'
+//// erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(benchmark)'
 //// ```
 
 import gleam/list
