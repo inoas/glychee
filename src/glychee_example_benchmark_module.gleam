@@ -1,8 +1,15 @@
+//// Example module not to be called directly but could be mimicked in your
+//// application or library.
+////
+
 if erlang {
   import glychee/benchmark
   import gleam/list
   import gleam/int
 
+  /// Main function so that this call can succeed:
+  /// `erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(glychee_example_benchmark_module)'`
+  ///
   pub fn main() {
     benchmark.run(
       [
@@ -31,9 +38,15 @@ if erlang {
     )
   }
 
+  /// Helper function to shuffle a list,
+  /// because at the time of writing gleam_stdlib did not feature list.shuffle.
+  ///
   external fn elixir_enum_shuffle(List(a)) -> List(a) =
     "Elixir.Enum" "shuffle"
 
+  /// A wrapper for Erlang's built-in list sorting implementation.
+  /// Used as a bechmark baseline/comparsion to gleam's stdlib list.sort().
+  ///
   external fn erlang_lists_of_int_sort(List(a)) -> List(a) =
     "lists" "sort"
 }

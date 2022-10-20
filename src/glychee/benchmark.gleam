@@ -1,15 +1,72 @@
+//// Benchmark
+////
+//// Contain's custom types and runner function to process those
+////
+//// ### Example
+////
+//// ```gleam
+//// // In src/benchmark.gleam
+//// import glychee/benchmark
+//// import gleam/list
+//// import gleam/int
+////
+//// pub fn main() {
+//// 	benchmark.run(
+//// 		[
+//// 			benchmark.Function(
+//// 				label: "list.sort()",
+//// 				fun: fn(test_data) { fn() { list.sort(test_data, int.compare) } },
+//// 			),
+//// 		],
+//// 		[
+//// 			benchmark.Data(label: "pre-sorted list", data: list.range(1, 100_000)),
+//// 			benchmark.Data(
+//// 				label: "reversed list",
+//// 				data: list.range(1, 100_000)
+//// 				|> list.reverse,
+//// 			)
+//// 		],
+//// 	)
+//// }
+//// ```
+////
+//// Run via:
+////
+//// ```sh
+//// gleam clean && \
+//// gleam build && \
+//// erl -pa ./build/dev/erlang/*/ebin -noshell \
+////   -eval 'gleam@@main:run(benchmark)'
+//// ```
+
 import gleam/list
 import gleam/string
 import gleam/io
 
+/// Function pairs a `label` with a function returning a callable.
+/// The function requires some `test_data`.
+///
+/// The label is used as part of the benchmark's stdout output.
+///
 pub type Function(test_data, any) {
   Function(label: String, fun: fn(test_data) -> any)
 }
 
+/// Data pairs arbitrary data, such as a List(Int) with a label
+///
+/// The label is used as part of the benchmark's stdout output.
+///
 pub type Data(data) {
   Data(label: String, data: data)
 }
 
+/// Takes a List of Function and List of Data and runs
+/// benchmarks for each Function combined with each Data
+/// grouped by Data first and Function second.
+///
+/// Utilized Benchee and its's stdout output for the
+/// function benchmarking.
+///
 pub fn run(
   function_sets: List(Function(test_data, any)),
   data_sets: List(Data(test_data)),
@@ -35,5 +92,7 @@ pub fn run(
   )
 }
 
+/// Wrapper into Elixir's Benchee
+///
 external fn benchee_wrapper_run(List(#(String, any))) -> any =
   "Elixir.GlycheeBenchee" "run"
