@@ -13,13 +13,13 @@ Also requires elixir and hex to be installed. You might be required to run `mix 
 
 1. Add glychee to your project: `gleam add glychee`.
 2. Create a a custom benchmarking module that contains a `main`-function.
-   See `glychee_example_custom_benchmark_module.gleam` as an example.
+   See `glychee_example_benchmark_module.gleam` as an example.
    In that module you will define which `Function`s to benchmark with one or many `Data`.
 3. Run the benchmark. `bin/glychee_example_benchmark_call.sh` in this library shows an example on how do do it:
 
    ```sh
    erl -pa ./build/dev/erlang/*/ebin -noshell -eval \
-     'gleam@@main:run(glychee_example_custom_benchmark_module)';
+     'gleam@@main:run(glychee_example_benchmark_module)';
    ```
 
 ## Installation
