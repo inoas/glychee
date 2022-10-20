@@ -16,15 +16,15 @@ if erlang {
         ),
       ],
       [
-        benchmark.Data(label: "pre-sorted list", data: list.range(1, 1_000)),
+        benchmark.Data(label: "pre-sorted list", data: list.range(1, 100_000)),
         benchmark.Data(
           label: "reversed list",
-          data: list.range(1, 1_000)
+          data: list.range(1, 100_000)
           |> list.reverse,
         ),
         benchmark.Data(
           label: "shuffled list",
-          data: list.range(1, 1_000)
+          data: list.range(1, 100_000)
           |> elixir_enum_shuffle,
         ),
       ],
