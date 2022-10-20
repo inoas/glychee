@@ -10,7 +10,7 @@ A simple gleam benchmark runner which wraps <https://github.com/bencheeorg/bench
 Notice: Requires at least gleam 0.0.0-nightly-221019 or gleam 0.24.
 
 1. Add glychee to your project: `gleam add glychee`.
-2. Create a a custom benchmarking module that contains a main function.
+2. Create a a custom benchmarking module that contains a `main`-function.
    See `glychee_example_custom_benchmark_module.gleam` as an example.
    In that module you will define which `Function`s to benchmark with one or many `Data`.
 3. Run the benchmark. `bin/glychee_example_benchmark_call.sh` in this library shows an example on how do do it:
