@@ -7,21 +7,33 @@ if erlang {
     benchmark.run(
       [
         benchmark.Function(
-          label: "list.merge_sort()",
+          label: "list.sort()",
           fun: fn(test_data) { fn() { list.sort(test_data, int.compare) } },
         ),
         benchmark.Function(
-          label: "list.insertion_sort()",
-          fun: fn(test_data) { fn() { list.sort(test_data, int.compare) } },
+          label: "erlang:lists:sort()",
+          fun: fn(test_data) { fn() { erlang_lists_of_int_sort(test_data) } },
         ),
       ],
       [
-        benchmark.Data(label: "tiny presorted list", data: list.range(1, 20)),
+        benchmark.Data(label: "pre-sorted list", data: list.range(1, 1_000)),
         benchmark.Data(
-          label: "medium presorted list",
-          data: list.range(1, 1000),
+          label: "reversed list",
+          data: list.range(1, 1_000)
+          |> list.reverse,
+        ),
+        benchmark.Data(
+          label: "shuffled list",
+          data: list.range(1, 1_000)
+          |> elixir_enum_shuffle,
         ),
       ],
     )
   }
+
+  external fn elixir_enum_shuffle(List(a)) -> List(a) =
+    "Elixir.Enum" "shuffle"
+
+  external fn erlang_lists_of_int_sort(List(a)) -> List(a) =
+    "lists" "sort"
 }
