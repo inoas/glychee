@@ -8,21 +8,21 @@ if javascript {
 
 if erlang {
   import gleam/erlang
-  import benchmark_runner
+  import benchmark_runner.{DataSet, run_benchmark}
   import gleam/list
   import gleam/int
 
   pub fn main() {
     case erlang.start_arguments() {
       ["benchmark"] -> {
-        benchmark_runner.run(
+        run_benchmark(
           [
             #(
               "list.sort()",
               fn(test_data) { fn() { list.sort(test_data, int.compare) } },
             ),
           ],
-          [#("tiny presorted list", list.range(1, 20))],
+          [DataSet(label: "tiny presorted list", data: list.range(1, 20))],
         )
         Nil
       }
