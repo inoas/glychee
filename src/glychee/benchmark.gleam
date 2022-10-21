@@ -49,10 +49,6 @@
 //// erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(benchmark)'
 //// ```
 
-import gleam/list
-import gleam/string
-import gleam/io
-
 /// Function pairs a `label` with a function returning a callable.
 /// The function requires some `test_data`.
 ///
@@ -70,6 +66,10 @@ pub type Data(data) {
   Data(label: String, data: data)
 }
 
+/// Separator to be used for stdout printing
+///
+const separator_line = "================================================================================"
+
 /// Takes a List of Function and List of Data and runs benchmarks for each
 /// Function combined with each Data grouped by Data first and Function
 /// second.
@@ -78,29 +78,56 @@ pub type Data(data) {
 /// results for all data.
 ///
 pub fn run(
-  function_sets: List(Function(test_data, any)),
-  data_sets: List(Data(test_data)),
+  functions: List(Function(test_data, any)),
+  datas: List(Data(test_data)),
 ) -> Nil {
-  list.each(
-    data_sets,
-    fn(data_set) {
-      io.print("\n\n")
-      io.println(string.repeat("=", 80))
-      io.println(
-        "== data set: " <> data_set.label <> " "
-        |> string.pad_right(80, "="),
-      )
-      io.println(string.repeat("=", 80))
-      io.print("\n")
+  gleam_stdlib_each(
+    datas,
+    fn(data) {
+      erlang_io_put_chars("\n\n")
+      erlang_io_put_chars(separator_line <> "\n")
+      erlang_io_put_chars("== data set: " <> data.label <> " ")
+      erlang_io_put_chars("\n")
+      erlang_io_put_chars(separator_line <> "\n")
+      erlang_io_put_chars("\n")
 
-      function_sets
-      |> list.map(fn(function_set) {
-        #(function_set.label, function_set.fun(data_set.data))
-      })
+      functions
+      |> erlang_lists_maplist(
+        fn(function) {
+          let Function(label: function_label, fun: callable) = function
+          #(function_label, callable(data.data))
+        },
+        _,
+      )
       |> benchee_wrapper_run
     },
   )
 }
+
+/// Copy of stdlib's implementation.
+/// Copied here, so that there are no deps on glychee.
+///
+fn gleam_stdlib_each(list: List(a), f: fn(a) -> b) -> Nil {
+  case list {
+    [] -> Nil
+    [x, ..xs] -> {
+      f(x)
+      gleam_stdlib_each(xs, f)
+    }
+  }
+}
+
+/// Replaces stdlib's io.println
+/// so that there are no deps on glychee.
+///
+external fn erlang_io_put_chars(string: String) -> Nil =
+  "io" "put_chars"
+
+/// Replaces stdlib's list.map
+/// so that there are no deps on glychee.
+///
+external fn erlang_lists_maplist(fn(a) -> b, List(a)) -> List(b) =
+  "lists" "map"
 
 /// Wrapper for Elixir's Benchee
 ///

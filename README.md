@@ -18,14 +18,18 @@ Also requires `Elixir` and `hex` be installed. You might be required to run
 `mix local.hex` after installing Elixir.
 
 1. Add glychee to your project: `gleam add glychee`.
-2. Create a a custom benchmarking module that contains a `main`-function.
-   See `glychee_example_benchmark_module.gleam` as an example.
-   In that module you will define which `Function`s to benchmark with one or
-   many `Data`.
-3. Run the benchmark. `bin/glychee_example_benchmark_call.sh` in this
-   library's source shows an example on how do do it:
+2. Create a a custom benchmarking module for example named `my_benchmark` that
+   contains a `main`-function. In that module you will define which `Function`s
+   to benchmark with one or many `Data`.
+3. Run the benchmark:
 
-### Example
+   ```sh
+   gleam clean && \
+   gleam build && \
+   erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(my_benchmark)'
+   ```
+
+### Full example
 
 If you do not have a Gleam project yet, create it with:
 
