@@ -5,7 +5,7 @@
 //// ### Example
 ////
 //// ```gleam
-//// // In src/benchmark.gleam
+//// // In your application or library in src/benchmark.gleam:
 //// import glychee/benchmark
 //// import gleam/list
 //// import gleam/int
@@ -14,15 +14,19 @@
 ////   benchmark.run(
 ////     [
 ////       benchmark.Function(
+////         // swap the label for your function name's
 ////         label: "list.sort()",
 ////         fun: fn(test_data) {
 ////          fn() {
+////            // swap for your function to benchmark
 ////            list.sort(test_data, int.compare)
 ////          }
 ////        },
 ////       ),
+////       // You can add another function here to compare against.
 ////     ],
 ////     [
+////       // Replace these with data expected by your function(s).
 ////       benchmark.Data(
 ////        label: "pre-sorted list",
 ////        data: list.range(1, 100_000)
@@ -58,7 +62,7 @@ pub type Function(test_data, any) {
   Function(label: String, fun: fn(test_data) -> any)
 }
 
-/// Data pairs arbitrary data, such as a List(Int) with a label
+/// Data pairs arbitrary data, such as a `List(Int)` with a label.
 ///
 /// The label is used as part of the benchmark's stdout output.
 ///
