@@ -39,13 +39,13 @@ if erlang {
   }
 
   /// Helper function to shuffle a list,
-  /// because at the time of writing gleam_stdlib did not feature list.shuffle.
+  /// because at the time of writing Gleam's stdlib did not feature `list.shuffle()`.
   ///
   external fn elixir_enum_shuffle(List(a)) -> List(a) =
     "Elixir.Enum" "shuffle"
 
   /// A wrapper for Erlang's built-in list sorting implementation.
-  /// Used as a bechmark baseline/comparsion to gleam's stdlib list.sort().
+  /// Used as a bechmark baseline/comparsion to Gleam's stdlib `list.sort()`.
   ///
   external fn erlang_lists_of_int_sort(List(a)) -> List(a) =
     "lists" "sort"

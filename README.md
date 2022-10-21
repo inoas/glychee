@@ -3,8 +3,8 @@
 [![Package Version](https://img.shields.io/hexpm/v/glychee)](https://hex.pm/packages/glychee)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glychee/)
 
-A simple gleam benchmark runner which wraps
-[Benchee](https://github.com/bencheeorg/benchee).
+A simple Gleam benchmark runner which wraps
+[Benchee](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
 Named after [Gleam](https://gleam.run), Benchee and their fruity offspring, [Lychee](https://en.wikipedia.org/wiki/Lychee):
 
