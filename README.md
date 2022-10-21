@@ -4,7 +4,11 @@
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glychee/)
 
 A simple gleam benchmark runner which wraps
-<https://github.com/bencheeorg/benchee>.
+[Benchee](https://github.com/bencheeorg/benchee).
+
+Named after Gleam, Benchee and their offspring, this tasty fruit, called Lychee:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Litchi_chinensis_fruits.JPG" alt="photo of a Lychee" style="max-height: 10em"/>
 
 ## Quick start
 
