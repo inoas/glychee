@@ -74,7 +74,7 @@ pub type Data(data) {
 /// Function combined with each Data grouped by Data first and Function
 /// second.
 ///
-/// Utilized Benchee and its's stdout output for the function benchmarking.
+/// Utilized Benchee and its stdout's output for the function benchmarking.
 ///
 pub fn run(
   function_sets: List(Function(test_data, any)),
