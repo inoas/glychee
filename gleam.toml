@@ -1,11 +1,11 @@
 name = "glychee"
-version = "0.2.1"
+version = "0.2.2"
 
 # Fill out these fields if you intend to generate HTML documentation or publish
 # your project to the Hex package manager.
 #
 licences = ["Apache-2.0"]
-description = "Glychee: Easy access to Elixir's benchee from Gleam..."
+description = "Glychee: Easy access to Elixir's benchee from Gleam!"
 repository = { type = "github", user = "inoas", repo = "glychee" }
 # links = [{ title = "Website", href = "https://gleam.run" }]
 

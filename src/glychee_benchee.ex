@@ -17,8 +17,10 @@ defmodule GlycheeBenchee do
 
     Benchee.run(
       map_of_function_tuples,
-      time: 10,
-      memory_time: 2
+      warmup: 4,
+      time: 8,
+      memory_time: 4,
+      reduction_time: 4
     )
   end
 end
