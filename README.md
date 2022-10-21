@@ -52,7 +52,7 @@ if erlang {
       [
         benchmark.Function(
           label: "list.sort()",
-          fun: fn(test_data) {
+          callable:fn(test_data) {
             fn() {
               list.sort(test_data, int.compare)
             }

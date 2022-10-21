@@ -16,7 +16,7 @@
 ////       benchmark.Function(
 ////         // swap the label for your function name's
 ////         label: "list.sort()",
-////         fun: fn(test_data) {
+////         callable:fn(test_data) {
 ////          fn() {
 ////            // swap for your function to benchmark
 ////            list.sort(test_data, int.compare)
@@ -50,15 +50,16 @@
 //// ```
 
 /// Function pairs a `label` with a function returning a callable.
+///
 /// The function requires some `test_data`.
 ///
 /// The label is used as part of the benchmark's stdout output.
 ///
 pub type Function(test_data, any) {
-  Function(label: String, fun: fn(test_data) -> any)
+  Function(label: String, callable: fn(test_data) -> fn() -> any)
 }
 
-/// Data pairs arbitrary data, such as a `List(Int)` with a label.
+/// Data pairs arbitrary data to benchmark on with a label.
 ///
 /// The label is used as part of the benchmark's stdout output.
 ///
@@ -94,7 +95,7 @@ pub fn run(
       functions
       |> erlang_lists_maplist(
         fn(function) {
-          let Function(label: function_label, fun: callable) = function
+          let Function(label: function_label, callable: callable) = function
           #(function_label, callable(data.data))
         },
         _,
@@ -120,16 +121,18 @@ fn gleam_stdlib_each(list: List(a), f: fn(a) -> b) -> Nil {
 /// Replaces stdlib's io.println
 /// so that there are no deps on glychee.
 ///
-external fn erlang_io_put_chars(string: String) -> Nil =
+external fn erlang_io_put_chars(text: String) -> Nil =
   "io" "put_chars"
 
 /// Replaces stdlib's list.map
 /// so that there are no deps on glychee.
 ///
-external fn erlang_lists_maplist(fn(a) -> b, List(a)) -> List(b) =
+external fn erlang_lists_maplist(callable: fn(a) -> b, list: List(a)) -> List(b) =
   "lists" "map"
 
 /// Wrapper for Elixir's Benchee
 ///
-external fn benchee_wrapper_run(List(#(String, any))) -> any =
+external fn benchee_wrapper_run(
+  list_of_function_tuples: List(#(String, any)),
+) -> any =
   "Elixir.GlycheeBenchee" "run"
