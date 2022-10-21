@@ -14,8 +14,8 @@ Named after [Gleam](https://gleam.run), Benchee and their fruity offspring, [Lyc
 
 _Notice: Requires at least gleam 0.24 (or gleam 0.0.0-nightly-221019 or later)._
 
-Also requires elixir and hex to be installed. You might be required to run
-`mix local.hex` after installing elixir.
+Also requires `Elixir` and `hex` be installed. You might be required to run
+`mix local.hex` after installing Elixir.
 
 1. Add glychee to your project: `gleam add glychee`.
 2. Create a a custom benchmarking module that contains a `main`-function.
@@ -27,7 +27,7 @@ Also requires elixir and hex to be installed. You might be required to run
 
 ### Example
 
-If you do not have a gleam project yet, create it with:
+If you do not have a Gleam project yet, create it with:
 
 ```sh
 gleam new foobar
@@ -35,7 +35,7 @@ cd foobar
 ```
 
 In your project create a file named `src/benchmark.gleam` with following
-contents:
+source code:
 
 ```gleam
 if erlang {
@@ -71,7 +71,7 @@ if erlang {
 }
 ```
 
-Then run via:
+Then run in your terminal via:
 
 ```sh
 gleam clean && \
