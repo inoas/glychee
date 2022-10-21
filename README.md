@@ -23,14 +23,15 @@ Also requires elixir and hex to be installed. You might be required to run
 
 ### Example
 
-If you do not have a project yet, create it with:
+If you do not have a gleam project yet, create it with:
 
 ```sh
 gleam new foobar
 cd foobar
 ```
 
-Create a file named `src/benchmark.gleam` with following contents:
+In your project create a file named `src/benchmark.gleam` with following
+contents:
 
 ```gleam
 if erlang {
@@ -73,6 +74,12 @@ gleam clean && \
 gleam build && \
 erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(benchmark)'
 ```
+
+Now you can alter the functions and data specified in above's example to
+whichever function of your application or library you want to benchmark.
+
+Note that you can benchmark multiple functions with different data sets
+in one go.
 
 ## Installation
 
