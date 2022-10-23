@@ -79,11 +79,11 @@ const separator_line = "========================================================
 /// results for all data.
 ///
 pub fn run(
-  functions: List(Function(test_data, any)),
-  datas: List(Data(test_data)),
+  function_list: List(Function(test_data, any)),
+  data_list: List(Data(test_data)),
 ) -> Nil {
   gleam_stdlib_each(
-    datas,
+    data_list,
     fn(data) {
       erlang_io_put_chars("\n\n")
       erlang_io_put_chars(separator_line <> "\n")
@@ -92,7 +92,7 @@ pub fn run(
       erlang_io_put_chars(separator_line <> "\n")
       erlang_io_put_chars("\n")
 
-      functions
+      function_list
       |> erlang_lists_maplist(
         fn(function: Function(test_data, any)) {
           #(function.label, function.callable(data.data))
