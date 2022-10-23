@@ -87,16 +87,15 @@ pub fn run(
     fn(data) {
       erlang_io_put_chars("\n\n")
       erlang_io_put_chars(separator_line <> "\n")
-      erlang_io_put_chars("== data set: " <> data.label <> " ")
+      erlang_io_put_chars("==== data set: " <> data.label <> " ")
       erlang_io_put_chars("\n")
       erlang_io_put_chars(separator_line <> "\n")
       erlang_io_put_chars("\n")
 
       functions
       |> erlang_lists_maplist(
-        fn(function) {
-          let Function(label: function_label, callable: callable) = function
-          #(function_label, callable(data.data))
+        fn(function: Function(test_data, any)) {
+          #(function.label, function.callable(data.data))
         },
         _,
       )

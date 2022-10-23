@@ -1,5 +1,5 @@
 name = "glychee"
-version = "0.2.2"
+version = "0.2.3"
 
 # Fill out these fields if you intend to generate HTML documentation or publish
 # your project to the Hex package manager.
@@ -11,3 +11,9 @@ repository = { type = "github", user = "inoas", repo = "glychee" }
 
 [dependencies]
 benchee = "~> 1.1"
+
+[documentation]
+pages = [
+	{ title = "Changelog", path = "changelog.html", source = "CHANGELOG.md" },
+	{ title = "License", path = "license.txt", source = "LICENSE" },
+]
