@@ -8,13 +8,16 @@ A simple Gleam benchmark runner which wraps
 
 Named after [Gleam](https://gleam.run), Benchee and their fruity [Lychee](https://en.wikipedia.org/wiki/Lychee) offspring:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Litchi_chinensis_fruits.JPG" alt="photo of a Lychee" style="max-height: 10em"/>
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Litchi_chinensis_fruits.JPG" alt="photo of a Lychee" style="max-height: 10em"/>
+  <figcaption><i><small>Lychees</small></i></figcaption>
+</figure>
 
 ## Requirements
 
 - Requires Gleam 0.24 or later.
 - A recent Elixir and Hex must be installed. You might be required to run
-`mix local.hex` after installing Elixir.
+  `mix local.hex` after installing Elixir.
 
 ## Quick start
 

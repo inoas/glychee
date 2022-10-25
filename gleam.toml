@@ -15,5 +15,5 @@ benchee = "~> 1.1"
 [documentation]
 pages = [
 	{ title = "Changelog", path = "changelog.html", source = "CHANGELOG.md" },
-	{ title = "License", path = "license.txt", source = "LICENSE" },
+	{ title = "License", path = "license.html", source = "LICENSE" },
 ]
