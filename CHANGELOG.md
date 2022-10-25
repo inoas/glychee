@@ -1,6 +1,10 @@
 # Changelog
 
-## v0.2.2
+## 0.2.3
+
+- Now just requires gleam 0.24.0 instead of some unreleased nightly version.
+
+## 0.2.2
 
 - Changed benchee configuration settings to:
 

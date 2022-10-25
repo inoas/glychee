@@ -118,13 +118,13 @@ fn gleam_stdlib_each(list: List(a), f: fn(a) -> b) -> Nil {
 }
 
 /// Replaces stdlib's io.println
-/// so that there are no deps on glychee.
+/// so that there are no deps on Glychee.
 ///
 external fn erlang_io_put_chars(text: String) -> Nil =
   "io" "put_chars"
 
 /// Replaces stdlib's list.map
-/// so that there are no deps on glychee.
+/// so that there are no deps on Glychee.
 ///
 external fn erlang_lists_maplist(callable: fn(a) -> b, list: List(a)) -> List(b) =
   "lists" "map"

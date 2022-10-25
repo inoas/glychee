@@ -6,18 +6,19 @@
 A simple Gleam benchmark runner which wraps
 [Benchee](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
-Named after [Gleam](https://gleam.run), Benchee and their fruity offspring, [Lychee](https://en.wikipedia.org/wiki/Lychee):
+Named after [Gleam](https://gleam.run), Benchee and their fruity [Lychee](https://en.wikipedia.org/wiki/Lychee) offspring:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Litchi_chinensis_fruits.JPG" alt="photo of a Lychee" style="max-height: 10em"/>
 
-## Quick start
+## Requirements
 
-_Notice: Requires at least gleam 0.24 (or gleam 0.0.0-nightly-221019 or later)._
-
-Also requires `Elixir` and `hex` be installed. You might be required to run
+- Requires Gleam 0.24 or later.
+- A recent Elixir and Hex must be installed. You might be required to run
 `mix local.hex` after installing Elixir.
 
-1. Add glychee to your project: `gleam add glychee`.
+## Quick start
+
+1. Add Glychee to your project: `gleam add glychee`.
 2. Create a a custom benchmarking module for example named `my_benchmark` that
    contains a `main`-function. In that module you will define which `Function`s
    to benchmark with one or many `Data`.
@@ -38,8 +39,8 @@ gleam new foobar
 cd foobar
 ```
 
-In your project create a file named `src/benchmark.gleam` with following
-source code:
+Add glychee: `gleam add glychee`, then in your project create a file named
+`src/benchmark.gleam` with following source code:
 
 ```gleam
 if erlang {
@@ -89,16 +90,10 @@ whichever function of your application or library you want to benchmark.
 Note that you can benchmark multiple functions with different data sets
 in one go.
 
-## Installation
-
-If available on Hex this package can be added to your Gleam project:
-
-```sh
-gleam add glychee
-```
+## Documentation
 
 Glychee's documentation can be found at <https://hexdocs.pm/glychee>.
 
 ## License
 
-Apache 2.0
+[Apache 2.0](./LICENSE)
