@@ -2,11 +2,11 @@
 
 ## 0.2.3
 
-- Now just requires gleam 0.24.0 instead of some unreleased nightly version.
+- Now just requires Gleam 0.24.0 instead of an unreleased nightly version.
 
 ## 0.2.2
 
-- Changed benchee configuration settings to:
+- Changed Benchee configuration settings to:
 
   ```elixir
   [
@@ -19,4 +19,5 @@
 
 ## v0.2.0
 
-- Removed these dependencies: gleam's `stdlib`, `gleam_erlang`, and `gleeunit` anymore
+- Removed these dependencies: gleam's `stdlib`, `gleam_erlang`, and `gleeunit`,
+  which means Glychee can be used in these projects to benchmark themselves.
