@@ -22,7 +22,7 @@ Named after [Gleam](https://gleam.run), Benchee and their fruity [Lychee](https:
 ## Quick start
 
 1. Add Glychee to your project: `gleam add glychee`.
-2. Create a a custom benchmarking module for example named `my_benchmark` that
+2. Create a custom benchmarking module for example named `my_benchmark` that
    contains a `main`-function. In that module you will define which `Function`s
    to benchmark with one or many `Data`.
 3. Run the benchmark:
@@ -56,7 +56,7 @@ if erlang {
       [
         benchmark.Function(
           label: "list.sort()",
-          callable:fn(test_data) {
+          callable: fn(test_data) {
             fn() {
               list.sort(test_data, int.compare)
             }
@@ -71,7 +71,7 @@ if erlang {
         benchmark.Data(
           label: "reversed list",
           data: list.range(1, 100_000)
-          |> list.reverse,
+            |> list.reverse,
         ),
       ],
     )

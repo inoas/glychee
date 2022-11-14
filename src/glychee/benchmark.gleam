@@ -1,53 +1,7 @@
 //// Benchmark
 ////
-//// Contain's custom types and a runner function to process those.
-////
-//// ### Example
-////
-//// ```gleam
-//// // In your application or library in src/benchmark.gleam:
-//// import glychee/benchmark
-//// import gleam/list
-//// import gleam/int
-////
-//// pub fn main() {
-////   benchmark.run(
-////     [
-////       benchmark.Function(
-////         // swap the label for your function name's
-////         label: "list.sort()",
-////         callable:fn(test_data) {
-////          fn() {
-////            // swap for your function to benchmark
-////            list.sort(test_data, int.compare)
-////          }
-////        },
-////       ),
-////       // You can add another function here to compare against.
-////     ],
-////     [
-////       // Replace these with data expected by your function(s).
-////       benchmark.Data(
-////        label: "pre-sorted list",
-////        data: list.range(1, 100_000)
-////      ),
-////       benchmark.Data(
-////         label: "reversed list",
-////         data: list.range(1, 100_000)
-////         |> list.reverse,
-////       )
-////     ],
-////   )
-//// }
-//// ```
-////
-//// Run via:
-////
-//// ```
-//// gleam clean && \
-//// gleam build && \
-//// erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(benchmark)'
-//// ```
+//// Contain's custom types Function and Data and a runner function to run
+//// a list of these benchmark functions against a list of benchmark data.
 
 /// Function pairs a `label` with a function returning a callable.
 ///
@@ -71,8 +25,8 @@ pub type Data(data) {
 ///
 const separator_line = "================================================================================"
 
-/// Takes a List of Function and List of Data and runs benchmarks for each
-/// Function combined with each Data grouped by Data first and Function
+/// Takes a `List` of `Function` and `List` of `Data` and runs benchmarks for each
+/// `Function` combined with each `Data` grouped by `Data` first and `Function`
 /// second.
 ///
 /// Utilized Benchee and its stdout's output to print the function's benchmark
@@ -105,7 +59,7 @@ pub fn run(
 }
 
 /// Copy of stdlib's implementation.
-/// Copied here, so that there are no deps on glychee.
+/// Copied here, so that there are no deps on Glychee.
 ///
 fn gleam_stdlib_each(list: List(a), f: fn(a) -> b) -> Nil {
   case list {

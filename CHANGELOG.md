@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased - 0.2.4
+
+- Typos
+
 ## 0.2.3
 
 - Now just requires Gleam 0.24.0 instead of an unreleased nightly version.
