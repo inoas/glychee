@@ -15,7 +15,7 @@ pub type Function(test_data, any) {
 
 /// Data pairs arbitrary data to benchmark on with a label.
 ///
-/// The label is used as part of the benchmark's stdout output.
+/// The label is used as part of the benchmark's `stdout` output.
 ///
 pub type Data(data) {
   Data(label: String, data: data)
@@ -29,7 +29,7 @@ const separator_line = "========================================================
 /// `Function` combined with each `Data` grouped by `Data` first and `Function`
 /// second.
 ///
-/// Utilized Benchee and its stdout's output to print the function's benchmark
+/// Utilizes `Benchee` and its `stdout`'s output to print the function's benchmark
 /// results for all data.
 ///
 pub fn run(
@@ -41,7 +41,7 @@ pub fn run(
     fn(data) {
       erlang_io_put_chars("\n\n")
       erlang_io_put_chars(separator_line <> "\n")
-      erlang_io_put_chars("==== data set: " <> data.label <> " ")
+      erlang_io_put_chars("==== data set: " <> data.label)
       erlang_io_put_chars("\n")
       erlang_io_put_chars(separator_line <> "\n")
       erlang_io_put_chars("\n")
