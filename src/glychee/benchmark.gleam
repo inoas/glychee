@@ -47,7 +47,7 @@ pub fn run(
       erlang_io_put_chars("\n")
 
       function_list
-      |> erlang_lists_maplist(
+      |> erlang_lists_map(
         fn(function: Function(test_data, any)) {
           #(function.label, function.callable(data.data))
         },
@@ -80,7 +80,7 @@ external fn erlang_io_put_chars(text: String) -> Nil =
 /// Replaces stdlib's list.map
 /// so that there are no deps on Glychee.
 ///
-external fn erlang_lists_maplist(callable: fn(a) -> b, list: List(a)) -> List(b) =
+external fn erlang_lists_map(callable: fn(a) -> b, list: List(a)) -> List(b) =
   "lists" "map"
 
 /// Wrapper for Elixir's Benchee
