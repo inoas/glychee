@@ -4,9 +4,9 @@
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3?label=%F0%9F%93%9A)](https://hexdocs.pm/glychee/)
 [![License](https://img.shields.io/hexpm/l/glychee?color=ffaff3&label=%F0%9F%93%83)](https://github.com/inoas/glychee/blob/main/LICENSE)
 
-A simple [**Gleam**](https://gleam.run) benchmark runner which wraps [Benchee](https://github.com/bencheeorg/benchee) for the heavy lifting.
+A simple [Gleam](https://gleam.run) benchmark runner which wraps [**Benchee**](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
-Named after [*Gleam*](https://gleam.run), *Benchee* and their fruity [*Lychee*](https://en.wikipedia.org/wiki/Lychee) offspring:
+Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.org/wiki/Lychee) offspring:
 
 <figure>
   <img src="https://raw.githubusercontent.com/inoas/glychee/main/glychee-logo.jpg" alt="Glychee Logo" style="max-height: 33vh; width: auto; height: auto" width="480" height="480"/>
