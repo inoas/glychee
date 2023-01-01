@@ -22,7 +22,7 @@ Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.
 
 ## Quick start
 
-1. Add ***Glychee*** to your project: `gleam add glychee`.
+1. Add ***Glychee*** to your project: `gleam add glychee --dev`.
 2. Create a custom benchmarking module for example named `my_benchmark` that
    contains a `main`-function. In that module you will define which `Function`s
    to benchmark with one or many `Data`.
@@ -43,7 +43,7 @@ gleam new foobar
 cd foobar
 ```
 
-Add **Glychee**: `gleam add glychee`, then in your project create a file named
+Add **Glychee**: `gleam add glychee --dev`, then in your project create a file named
 `src/benchmark.gleam` with following source code:
 
 ```gleam

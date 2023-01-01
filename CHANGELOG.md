@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6
+
+- Instruct to use `gleam add glychee --dev` to add as a dev dependency, only.
+
 ## 0.2.5
 
 - Fix logo on hexpm
