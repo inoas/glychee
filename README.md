@@ -11,7 +11,7 @@ Named after [*Gleam*](https://gleam.run), *Benchee* and their fruity [*Lychee*](
 
 <figure>
   <img src="https://raw.githubusercontent.com/inoas/glychee/main/glychee-logo.jpg" alt="Glychee Logo" width="480" style="max-height: 10em"/>
-  <figcaption><i><small>Glychee</small></i></figcaption>
+  <figcaption><i><small>Imaginary Glychees</small></i></figcaption>
 </figure>
 
 ## Requirements
