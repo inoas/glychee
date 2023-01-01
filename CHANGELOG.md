@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased - 0.2.4
+## 0.2.4
 
+- Readme
 - Typos
 - Logo
 
