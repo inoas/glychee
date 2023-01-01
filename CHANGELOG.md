@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.5
+
+- Fix logo on hexpm
+
 ## 0.2.4
 
 - Readme

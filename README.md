@@ -10,7 +10,7 @@ A simple **Gleam** benchmark runner which wraps
 Named after [*Gleam*](https://gleam.run), *Benchee* and their fruity [*Lychee*](https://en.wikipedia.org/wiki/Lychee) offspring:
 
 <figure>
-  <img src="https://raw.githubusercontent.com/inoas/glychee/main/glychee-logo.jpg" alt="Glychee Logo" width="480" style="max-height: 10em"/>
+  <img src="https://raw.githubusercontent.com/inoas/glychee/main/glychee-logo.jpg" alt="Glychee Logo" style="max-height: 33vh; width: auto; height: auto" width="480" height="480"/>
   <figcaption><i><small>Imaginary Glychees</small></i></figcaption>
 </figure>
 
