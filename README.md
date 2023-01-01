@@ -1,10 +1,10 @@
-# Glychee · A simple Gleam benchmark runner
+# Glychee · A Simple Gleam Benchmark Runner
 
 [![Hex Package](https://img.shields.io/hexpm/v/glychee?color=ffaff3&label=%F0%9F%93%A6)](https://hex.pm/packages/glychee)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3?label=%F0%9F%93%9A)](https://hexdocs.pm/glychee/)
 [![License](https://img.shields.io/hexpm/l/glychee?color=ffaff3&label=%F0%9F%93%83)](https://github.com/inoas/glychee/blob/main/LICENSE)
 
-A simple Gleam benchmark runner which wraps
+A simple **Gleam** benchmark runner which wraps
 [Benchee](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
 Named after [*Gleam*](https://gleam.run), *Benchee* and their fruity [*Lychee*](https://en.wikipedia.org/wiki/Lychee) offspring:
@@ -23,7 +23,7 @@ Named after [*Gleam*](https://gleam.run), *Benchee* and their fruity [*Lychee*](
 
 ## Quick start
 
-1. Add Glychee to your project: `gleam add glychee`.
+1. Add ***Glychee*** to your project: `gleam add glychee`.
 2. Create a custom benchmarking module for example named `my_benchmark` that
    contains a `main`-function. In that module you will define which `Function`s
    to benchmark with one or many `Data`.
@@ -44,7 +44,7 @@ gleam new foobar
 cd foobar
 ```
 
-Add *Glychee*: `gleam add glychee`, then in your project create a file named
+Add **Glychee**: `gleam add glychee`, then in your project create a file named
 `src/benchmark.gleam` with following source code:
 
 ```gleam
@@ -96,7 +96,7 @@ in one go.
 
 ## Documentation
 
-Glychee's documentation can be found at <https://hexdocs.pm/glychee>.
+**Glychee**'s documentation can be found at <https://hexdocs.pm/glychee>.
 
 ## License
 
