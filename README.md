@@ -1,16 +1,17 @@
-# Glychee
+# Glychee · A simple Gleam benchmark runner
 
-[![Package Version](https://img.shields.io/hexpm/v/glychee)](https://hex.pm/packages/glychee)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glychee/)
+[![Hex Package](https://img.shields.io/hexpm/v/glychee?color=ffaff3&label=%F0%9F%93%A6)](https://hex.pm/packages/glychee)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3?label=%F0%9F%93%9A)](https://hexdocs.pm/glychee/)
+[![License](https://img.shields.io/hexpm/l/glychee?color=ffaff3&label=%F0%9F%93%83)](https://github.com/inoas/glychee/blob/main/LICENSE)
 
 A simple Gleam benchmark runner which wraps
 [Benchee](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
-Named after [Gleam](https://gleam.run), Benchee and their fruity [Lychee](https://en.wikipedia.org/wiki/Lychee) offspring:
+Named after [*Gleam*](https://gleam.run), *Benchee* and their fruity [*Lychee*](https://en.wikipedia.org/wiki/Lychee) offspring:
 
 <figure>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Litchi_chinensis_fruits.JPG" alt="photo of a Lychee" style="max-height: 10em"/>
-  <figcaption><i><small>Lychees</small></i></figcaption>
+  <img src="https://raw.githubusercontent.com/inoas/glychee/main/glychee-logo.png" alt="Glychee Logo" width="480" style="max-height: 10em"/>
+  <figcaption><i><small>Glychee</small></i></figcaption>
 </figure>
 
 ## Requirements
@@ -18,6 +19,7 @@ Named after [Gleam](https://gleam.run), Benchee and their fruity [Lychee](https:
 - Requires Gleam 0.24 or later.
 - A recent Elixir and Hex must be installed. You might be required to run
   `mix local.hex` after installing Elixir.
+- Only allows benchmarking of target Erang and not target JavaScript.
 
 ## Quick start
 
@@ -42,14 +44,14 @@ gleam new foobar
 cd foobar
 ```
 
-Add glychee: `gleam add glychee`, then in your project create a file named
+Add *Glychee*: `gleam add glychee`, then in your project create a file named
 `src/benchmark.gleam` with following source code:
 
 ```gleam
 if erlang {
-  import glychee/benchmark
-  import gleam/list
   import gleam/int
+  import gleam/list
+  import glychee/benchmark
 
   pub fn main() {
     benchmark.run(
@@ -70,8 +72,7 @@ if erlang {
         ),
         benchmark.Data(
           label: "reversed list",
-          data: list.range(1, 100_000)
-            |> list.reverse,
+          data: list.range(1, 100_000) |> list.reverse,
         ),
       ],
     )
