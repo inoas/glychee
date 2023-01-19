@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.7
+
+- Improved readme instructions on how to run the Glychee.
+
 ## 0.2.6
 
 - Instruct to use `gleam add glychee --dev` to add as a dev dependency, only.
