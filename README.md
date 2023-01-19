@@ -31,8 +31,10 @@ Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.
    ```sh
    gleam clean && \
    gleam build && \
-   erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(my_benchmark)'
+   erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'PROJECT_NAME@@main:run(my_benchmark)'
    ```
+
+   ... where `PROJECT_NAME` is set via the root level `name` property in `gleam.toml`.
 
 ### Full example
 
@@ -84,8 +86,10 @@ Then run in your terminal via:
 ```sh
 gleam clean && \
 gleam build && \
-erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'gleam@@main:run(benchmark)'
+erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'PROJECT_NAME@@main:run(benchmark)'
 ```
+
+... where `PROJECT_NAME` is set via the root level `name` property in `gleam.toml`.
 
 Now you can alter the functions and data specified in above's example to
 whichever function of your application or library you want to benchmark.
