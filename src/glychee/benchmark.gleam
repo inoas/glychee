@@ -1,6 +1,4 @@
-//// Benchmark
-////
-//// Contain's custom types Function and Data and a runner function to run
+//// Contains custom types Function and Data and a runner function to run
 //// a list of these benchmark functions against a list of benchmark data.
 
 /// Function pairs a `label` with a function returning a callable.
