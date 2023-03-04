@@ -1,16 +1,9 @@
 name = "glychee"
 version = "0.2.7"
-
-# Fill out these fields if you intend to generate HTML documentation or publish
-# your project to the Hex package manager.
-#
 licences = ["Apache-2.0"]
-description = "Glychee: Easy access to Elixir's benchee from Gleam!"
+description = "Glychee: Easy access to Elixir's Benchee from Gleam!"
 repository = { type = "github", user = "inoas", repo = "glychee" }
 # links = [{ title = "Website", href = "https://gleam.run" }]
-
-# The target to default to when compiling or running Gleam code
-# Accepted values are "erlang" and "javascript". Defaults to "erlang".
 target = "erlang"
 
 [dependencies]
