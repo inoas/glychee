@@ -1,6 +1,6 @@
 defmodule GlycheeBenchee do
   @moduledoc """
-  Allows running of Benchee from  Gleam
+  Allows running of Benchee from Gleam
   """
 
   @doc """
