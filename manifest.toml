@@ -2,10 +2,10 @@
 # You typically do not need to edit this file
 
 packages = [
-  { name = "benchee", version = "1.1.0", build_tools = ["mix"], requirements = ["statistex", "deep_merge"], otp_app = "benchee", source = "hex", outer_checksum = "7DA57D545003165A012B587077F6BA90B89210FD88074CE3C60CE239EB5E6D93" },
+  { name = "benchee", version = "1.1.0", build_tools = ["mix"], requirements = ["deep_merge", "statistex"], otp_app = "benchee", source = "hex", outer_checksum = "7DA57D545003165A012B587077F6BA90B89210FD88074CE3C60CE239EB5E6D93" },
   { name = "deep_merge", version = "1.0.0", build_tools = ["mix"], requirements = [], otp_app = "deep_merge", source = "hex", outer_checksum = "CE708E5F094B9CD4E8F2BE4F00D2F4250C4095BE93F8CD6D018C753894885430" },
   { name = "statistex", version = "1.0.0", build_tools = ["mix"], requirements = [], otp_app = "statistex", source = "hex", outer_checksum = "FF9D8BEE7035028AB4742FF52FC80A2AA35CECE833CF5319009B52F1B5A86C27" },
 ]
 
 [requirements]
-benchee = "~> 1.1"
+benchee = { version = "~> 1.1" }

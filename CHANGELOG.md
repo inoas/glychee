@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- Update for Gleam 0.30.
+
 ## 0.2.7
 
 - Improved readme instructions on how to run the Glychee.

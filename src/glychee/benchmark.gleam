@@ -72,18 +72,20 @@ fn gleam_stdlib_each(list: List(a), f: fn(a) -> b) -> Nil {
 /// Replaces stdlib's io.println
 /// so that there are no deps on Glychee.
 ///
-external fn erlang_io_put_chars(text: String) -> Nil =
-  "io" "put_chars"
+@external(erlang, "io", "put_chars")
+fn erlang_io_put_chars(text text: String) -> Nil
 
 /// Replaces stdlib's list.map
 /// so that there are no deps on Glychee.
 ///
-external fn erlang_lists_map(callable: fn(a) -> b, list: List(a)) -> List(b) =
-  "lists" "map"
+@external(erlang, "lists", "map")
+fn erlang_lists_map(callable callable: fn(a) -> b, list list: List(a)) -> List(
+  b,
+)
 
 /// Wrapper for Elixir's Benchee
 ///
-external fn benchee_wrapper_run(
-  list_of_function_tuples: List(#(String, any)),
-) -> any =
-  "Elixir.GlycheeBenchee" "run"
+@external(erlang, "Elixir.GlycheeBenchee", "run")
+fn benchee_wrapper_run(list_of_function_tuples list_of_function_tuples: List(
+    #(String, any),
+  )) -> any
