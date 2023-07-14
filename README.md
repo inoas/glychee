@@ -15,7 +15,7 @@ Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.
 
 ## Requirements
 
-- Requires Gleam 0.24 or later.
+- Requires Gleam 0.30 or later.
 - A recent Elixir and Hex must be installed. You might be required to run
   `mix local.hex` after installing Elixir.
 - Only allows benchmarking of target Erlang and not target JavaScript.
