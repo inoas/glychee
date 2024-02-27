@@ -1,5 +1,8 @@
 //// Contains custom types `Function` and `Data` and a runner function to run
 //// a list of these benchmark functions against a list of benchmark data.
+////
+
+import glychee/helpers as h
 
 /// Function pairs a `label` with a function returning a callable.
 ///
@@ -34,58 +37,25 @@ pub fn run(
   function_list: List(Function(test_data, any)),
   data_list: List(Data(test_data)),
 ) -> Nil {
-  gleam_stdlib_each(
-    data_list,
-    fn(data) {
-      erlang_io_put_chars("\n\n")
-      erlang_io_put_chars(separator_line <> "\n")
-      erlang_io_put_chars("==== data set: " <> data.label)
-      erlang_io_put_chars("\n")
-      erlang_io_put_chars(separator_line <> "\n")
-      erlang_io_put_chars("\n")
+  h.gleam_list_each(data_list, fn(data) {
+    h.gleam_io_println("\n\n")
+    h.gleam_io_println(separator_line <> "\n")
+    h.gleam_io_println("==== data set: " <> data.label)
+    h.gleam_io_println("\n")
+    h.gleam_io_println(separator_line <> "\n")
+    h.gleam_io_println("\n")
 
-      function_list
-      |> erlang_lists_map(
-        fn(function: Function(test_data, any)) {
-          #(function.label, function.callable(data.data))
-        },
-        _,
-      )
-      |> benchee_wrapper_run
-    },
-  )
+    function_list
+    |> h.gleam_list_map(fn(function: Function(test_data, any)) {
+      #(function.label, function.callable(data.data))
+    })
+    |> benchee_wrapper_run
+  })
 }
-
-/// Copy of stdlib's implementation.
-/// Copied here, so that there are no deps on Glychee.
-///
-fn gleam_stdlib_each(list: List(a), f: fn(a) -> b) -> Nil {
-  case list {
-    [] -> Nil
-    [x, ..xs] -> {
-      f(x)
-      gleam_stdlib_each(xs, f)
-    }
-  }
-}
-
-/// Replaces stdlib's io.println
-/// so that there are no deps on Glychee.
-///
-@external(erlang, "io", "put_chars")
-fn erlang_io_put_chars(text text: String) -> Nil
-
-/// Replaces stdlib's list.map
-/// so that there are no deps on Glychee.
-///
-@external(erlang, "lists", "map")
-fn erlang_lists_map(callable callable: fn(a) -> b, list list: List(a)) -> List(
-  b,
-)
 
 /// Wrapper for Elixir's Benchee
 ///
 @external(erlang, "Elixir.GlycheeBenchee", "run")
-fn benchee_wrapper_run(list_of_function_tuples list_of_function_tuples: List(
-    #(String, any),
-  )) -> any
+fn benchee_wrapper_run(
+  list_of_function_tuples list_of_function_tuples: List(#(String, any)),
+) -> any
