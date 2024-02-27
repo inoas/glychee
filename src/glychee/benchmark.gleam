@@ -2,7 +2,7 @@
 //// a list of these benchmark functions against a list of benchmark data.
 ////
 
-import glychee/helpers as h
+import glychee/internal/lib
 
 /// Function pairs a `label` with a function returning a callable.
 ///
@@ -37,16 +37,16 @@ pub fn run(
   function_list: List(Function(test_data, any)),
   data_list: List(Data(test_data)),
 ) -> Nil {
-  h.gleam_list_each(data_list, fn(data) {
-    h.gleam_io_println("\n\n")
-    h.gleam_io_println(separator_line <> "\n")
-    h.gleam_io_println("==== data set: " <> data.label)
-    h.gleam_io_println("\n")
-    h.gleam_io_println(separator_line <> "\n")
-    h.gleam_io_println("\n")
+  lib.gleam_list_each(data_list, fn(data) {
+    lib.gleam_io_println("\n\n")
+    lib.gleam_io_println(separator_line <> "\n")
+    lib.gleam_io_println("==== data set: " <> data.label)
+    lib.gleam_io_println("\n")
+    lib.gleam_io_println(separator_line <> "\n")
+    lib.gleam_io_println("\n")
 
     function_list
-    |> h.gleam_list_map(fn(function: Function(test_data, any)) {
+    |> lib.gleam_list_map(fn(function: Function(test_data, any)) {
       #(function.label, function.callable(data.data))
     })
     |> benchee_wrapper_run

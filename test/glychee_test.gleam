@@ -1,6 +1,6 @@
-import glychee/helpers
+import glychee/internal/lib
 
 pub fn main() {
-  helpers.gleam_io_println("\nNotice: There are no tests!\n")
+  lib.gleam_io_println("\nNotice: There are no tests!\n")
   Nil
 }

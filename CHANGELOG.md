@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 - 2024-02-27
+
+- Fix hiding of internals.
+
 ## 1.0.1 - 2024-02-27
 
 - Mark helpers module as internal.

@@ -1,5 +1,5 @@
 name = "glychee"
-version = "1.0.1"
+version = "1.0.2"
 gleam = "~> 1.0"
 licences = ["Apache-2.0"]
 description = "Glychee: Easy access to Elixir's Benchee from Gleam!"
@@ -14,8 +14,4 @@ benchee = "~> 1.3"
 pages = [
 	{ title = "CHANGELOG", path = "changelog.html", source = "CHANGELOG.md" },
 	{ title = "LICENSE", path = "license.html", source = "LICENSE" },
-]
-
-internal_modules = [
-  "glychee/helpers",
 ]
