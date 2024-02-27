@@ -15,10 +15,12 @@ Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.
 
 ## Requirements
 
-- Requires Gleam 0.30 or later.
+- Requires **Gleam 1.0** or later.
+- For benchmarking on target JavaScript see <https://hex.pm/packages/gleamy_bench>,
+  as Glychee only allows benchmarking on target Erlang.
+- Glychee is dependency free except for *Benchee* and *Elixir*.
 - A recent Elixir and Hex must be installed. You might be required to run
   `mix local.hex` after installing Elixir.
-- Only allows benchmarking of target Erlang and not target JavaScript.
 
 ## Quick start
 
@@ -28,68 +30,57 @@ Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.
    to benchmark with one or many `Data`.
 3. Run the benchmark:
 
-   ```sh
+   ```shell
    gleam clean && \
    gleam build && \
-   erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'PROJECT_NAME@@main:run(my_benchmark)'
+   gleam run -m my_benchmark
    ```
-
-   ... where `PROJECT_NAME` is set via the root level `name` property in `gleam.toml`.
 
 ### Full example
 
 If you do not have a Gleam project yet, create it with:
 
-```sh
+```shell
 gleam new foobar
 cd foobar
 ```
 
-Add **Glychee**: `gleam add glychee --dev`, then in your project create a file named
-`src/benchmark.gleam` with following source code:
+To add and run a demo of **Glychee**:
 
-```gleam
-if erlang {
-  import gleam/int
-  import gleam/list
-  import glychee/benchmark
+1. `gleam add glychee --dev`
+2. In your project create a file named `src/my_benchmark.gleam` with following source code:
 
-  pub fn main() {
-    benchmark.run(
-      [
-        benchmark.Function(
-          label: "list.sort()",
-          callable: fn(test_data) {
-            fn() {
-              list.sort(test_data, int.compare)
-            }
-          },
-        ),
-      ],
-      [
-        benchmark.Data(
-          label: "pre-sorted list",
-          data: list.range(1, 100_000),
-        ),
-        benchmark.Data(
-          label: "reversed list",
-          data: list.range(1, 100_000) |> list.reverse,
-        ),
-      ],
-    )
-  }
-}
-```
+   ```gleam
+   import gleam/int
+   import gleam/list
+   import glychee/benchmark
 
-Then run in your terminal via:
+   pub fn main() {
+     benchmark.run(
+       [
+         benchmark.Function(label: "list.sort()", callable: fn(test_data) {
+           fn() { list.sort(test_data, int.compare) }
+         }),
+       ],
+       [
+         benchmark.Data(label: "pre-sorted list", data: list.range(1, 100_000)),
+         benchmark.Data(
+           label: "reversed list",
+           data: list.range(1, 100_000)
+             |> list.reverse,
+         ),
+       ],
+     )
+   }
+   ```
 
-```sh
-gleam clean && \
-gleam build && \
-erl -pa ./build/dev/erlang/*/ebin -noshell -eval 'PROJECT_NAME@@main:run(benchmark)'
-```
+3. Then run in your terminal via:
 
-... where `PROJECT_NAME` is set via the root level `name` property in `gleam.toml`.
+   ```shell
+   gleam clean && \
+   gleam build && \
+   gleam run -m my_benchmark
+   ```
 
 Now you can alter the functions and data specified in above's example to
 whichever function of your application or library you want to benchmark.
