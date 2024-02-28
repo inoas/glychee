@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.1.0 - 2024-02-28
+
+- Allow optional configuration:
+
+  ```gleam
+  import glychee/configuration
+  import glychee/benchmark
+
+  pub fn main() {
+    // Configuration is optional
+    configuration.initialize()
+    configuration.set_pair(configuration.Warmup, 2)
+    configuration.set_pair(configuration.Parallel, 2)
+
+    // Run the benchmark
+    benchmark.run(...)
+  }
+  ```
+
+  As of now, all values are positive integers, and supported keys are:
+
+  - MemoryTime
+  - Parallel
+  - ReductionTime
+  - Time
+  - Warmup
+
 ## 1.0.2 - 2024-02-27
 
 - Fix hiding of internals.

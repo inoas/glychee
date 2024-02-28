@@ -1,5 +1,5 @@
 name = "glychee"
-version = "1.0.2"
+version = "1.1.0"
 gleam = "~> 1.0"
 licences = ["Apache-2.0"]
 description = "Glychee: Easy access to Elixir's Benchee from Gleam!"
