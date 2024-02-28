@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 - 2024-02-28
+
+- Change title for better search results.
+
 ## 1.1.0 - 2024-02-28
 
 - Allow optional configuration:
