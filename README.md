@@ -1,4 +1,4 @@
-# Glychee · A Simple Gleam Benchmark Runner on Erlang via Benchee
+# Glychee · A Simple Gleam Benchmark Runner on Erlang via Elixir's Benchee
 
 [![Hex Package](https://img.shields.io/hexpm/v/glychee?color=ffaff3&label=%F0%9F%93%A6)](https://hex.pm/packages/glychee)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3?label=%F0%9F%93%9A)](https://hexdocs.pm/glychee/)
@@ -6,7 +6,7 @@
 
 A simple [Gleam](https://gleam.run) benchmark runner which wraps [**Benchee**](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
-Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.org/wiki/Lychee) offspring:
+Named after _Gleam_, _Benchee_ and their fruity [_Lychee_](https://en.wikipedia.org/wiki/Lychee) offspring:
 
 <figure>
   <img src="https://raw.githubusercontent.com/inoas/glychee/main/glychee-logo.jpg" alt="Glychee Logo" style="max-height: 33vh; width: auto; height: auto" width="480" height="480"/>
@@ -18,13 +18,13 @@ Named after *Gleam*, *Benchee* and their fruity [*Lychee*](https://en.wikipedia.
 - Requires **Gleam 1.0** or later.
 - For benchmarking on target JavaScript see <https://hex.pm/packages/gleamy_bench>,
   as Glychee only allows benchmarking on target Erlang.
-- Glychee is dependency free except for *Benchee* and *Elixir*.
+- Glychee is dependency free except for _Benchee_ and _Elixir_.
 - A recent Elixir and Hex must be installed. You might be required to run
   `mix local.hex` after installing Elixir.
 
 ## Quick start
 
-1. Add ***Glychee*** to your project: `gleam add glychee --dev`.
+1. Add **_Glychee_** to your project: `gleam add glychee --dev`.
 2. Create a custom benchmarking module for example named `my_benchmark` that
    contains a `main`-function. In that module you will define which `Function`s
    to benchmark with one or many `Data`.
