@@ -1,5 +1,5 @@
 name = "glychee"
-version = "1.1.1"
+version = "1.1.2"
 gleam = "~> 1.0"
 licences = ["Apache-2.0"]
 description = "Glychee Benchmark - Simple Gleam Benchmarking on Erlang via Elixir's Benchee"
