@@ -2,7 +2,7 @@ name = "glychee"
 version = "1.1.1"
 gleam = "~> 1.0"
 licences = ["Apache-2.0"]
-description = "Glychee · A Simple Gleam Benchmark Runner on Erlang via Elixir's Benchee"
+description = "Glychee - A Simple Gleam Benchmark Runner on Erlang via Elixir's Benchee"
 repository = { type = "github", user = "inoas", repo = "glychee" }
 # links = [{ title = "Website", href = "https://gleam.run" }]
 target = "erlang"
