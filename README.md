@@ -1,4 +1,4 @@
-# Glychee · A Simple Gleam Benchmark Runner on Erlang via Elixir's Benchee
+# Glychee Benchmark · Simple Gleam Benchmarking on Erlang via Elixir's Benchee
 
 [![Hex Package](https://img.shields.io/hexpm/v/glychee?color=ffaff3&label=%F0%9F%93%A6)](https://hex.pm/packages/glychee)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3?label=%F0%9F%93%9A)](https://hexdocs.pm/glychee/)

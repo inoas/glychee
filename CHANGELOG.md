@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 - 2024-05-01
+
+- Change title for better search results.
+
 ## 1.1.1 - 2024-05-01
 
 - Change title for better search results.
