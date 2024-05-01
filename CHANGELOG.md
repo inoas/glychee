@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.1 - 2024-02-28
+## 1.1.1 - 2024-05-01
 
 - Change title for better search results.
 
@@ -59,7 +59,7 @@
 
 ## 0.2.5 - 2023-01-01
 
-- Fix logo on *hexpm*.
+- Fix logo on _hexpm_.
 
 ## 0.2.4 - 2023-01-01
 
