@@ -1,10 +1,14 @@
 # Glychee Benchmark · Simple Gleam Benchmarking on Erlang via Elixir's Benchee
 
-[![Hex Package](https://img.shields.io/hexpm/v/glychee?color=ffaff3&label=%F0%9F%93%A6)](https://hex.pm/packages/glychee)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3?label=%F0%9F%93%9A)](https://hexdocs.pm/glychee/)
-[![License](https://img.shields.io/hexpm/l/glychee?color=ffaff3&label=%F0%9F%93%83)](https://github.com/inoas/glychee/blob/main/LICENSE)
+[![Package <a href="https://github.com/inoas/glychee/releases"><img src="https://img.shields.io/github/release/inoas/glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/given)](https://hex.pm/packages/given)
+[![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
+](https://en.wikipedia.org/wiki/JavaScript)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/given/)
+[![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
+[![CI Test](https://github.com/inoas/glychee/actions/workflows/test.yml/badge.svg?branch=main&amp;event=push)](https://github.com/inoas/glychee/actions/workflows/test.yml)
 
-A simple [Gleam](https://gleam.run) benchmark runner which wraps [**Benchee**](https://github.com/bencheeorg/benchee) for the heavy lifting.
+A simple [Gleam](https://gleam.run) benchmark runner which wraps
+[**Benchee**](https://github.com/bencheeorg/benchee) for the heavy lifting.
 
 Named after _Gleam_, _Benchee_ and their fruity [_Lychee_](https://en.wikipedia.org/wiki/Lychee) offspring:
 
