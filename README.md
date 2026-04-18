@@ -2,7 +2,6 @@
 
 [![Package <a href="https://github.com/inoas/glychee/releases"><img src="https://img.shields.io/github/release/inoas/glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/given)](https://hex.pm/packages/given)
 [![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
-](https://en.wikipedia.org/wiki/JavaScript)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/given/)
 [![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
 [![CI Test](https://github.com/inoas/glychee/actions/workflows/test.yml/badge.svg?branch=main&amp;event=push)](https://github.com/inoas/glychee/actions/workflows/test.yml)
