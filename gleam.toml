@@ -1,17 +1,17 @@
 name = "glychee"
 version = "1.1.2"
-gleam = "~> 1.0"
-licences = ["Apache-2.0"]
+licences = ["MPL-2.0"]
 description = "Glychee Benchmark - Simple Gleam Benchmarking on Erlang via Elixir's Benchee"
 repository = { type = "github", user = "inoas", repo = "glychee" }
-# links = [{ title = "Website", href = "https://gleam.run" }]
-target = "erlang"
 
-[dependencies]
-benchee = "~> 1.3"
+target = "erlang"
+gleam = ">= 1.15.4"
 
 [documentation]
 pages = [
     { title = "CHANGELOG", path = "changelog.html", source = "CHANGELOG.md" },
     { title = "LICENSE", path = "license.html", source = "LICENSE" },
 ]
+
+[dependencies]
+benchee = ">= 1.5.0 and < 2.0.0"
