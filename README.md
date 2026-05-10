@@ -1,4 +1,4 @@
-# Glychee Benchmark · Simple Gleam Benchmarking on Erlang via Elixir's Benchee
+# 🏎️ Glychee Benchmark · Simple Gleam Benchmarking on Erlang via Elixir's Benchee
 
 [![Package <a href="https://github.com/inoas/glychee/releases"><img src="https://img.shields.io/github/release/inoas/glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/given)](https://hex.pm/packages/given)
 [![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
