@@ -5,7 +5,6 @@
 [![JavaScript Compatible](https://img.shields.io/badge/target-javascript-f3e155)](https://en.wikipedia.org/wiki/JavaScript)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glychee/)
 [![Package <a href="https://github.com/inoas/gleam-glychee/releases"><img src="https://img.shields.io/github/release/inoas/gleam-glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/glychee)](https://hex.pm/packages/glychee)
-[![CI Test](https://github.com/inoas/gleam-glychee/actions/workflows/test.yml/badge.svg?branch=main&amp;event=push)](https://github.com/inoas/gleam-glychee/actions/workflows/test.yml)
 [![License](https://img.shields.io/hexpm/l/glychee)](https://github.com/inoas/gleam-glychee/blob/main/LICENCE)
 [![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
 
