@@ -2,7 +2,6 @@
 
 [![Downloads](https://img.shields.io/hexpm/dt/glychee)](https://hex.pm/packages/glychee)
 [![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
-[![JavaScript Compatible](https://img.shields.io/badge/target-javascript-f3e155)](https://en.wikipedia.org/wiki/JavaScript)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glychee/)
 [![Package <a href="https://github.com/inoas/gleam-glychee/releases"><img src="https://img.shields.io/github/release/inoas/gleam-glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/glychee)](https://hex.pm/packages/glychee)
 [![License](https://img.shields.io/hexpm/l/glychee)](https://github.com/inoas/gleam-glychee/blob/main/LICENCE)
