@@ -1,10 +1,16 @@
 # 🏎️ Glychee Benchmark · Simple Gleam Benchmarking on Erlang via Elixir's Benchee
 
-[![Package <a href="https://github.com/inoas/glychee/releases"><img src="https://img.shields.io/github/release/inoas/glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/given)](https://hex.pm/packages/given)
+[![Downloads](https://img.shields.io/hexpm/dt/glychee)](https://hex.pm/packages/glychee)
 [![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/given/)
+[![JavaScript Compatible](https://img.shields.io/badge/target-javascript-f3e155)](https://en.wikipedia.org/wiki/JavaScript)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glychee/)
+[![Package <a href="https://github.com/inoas/gleam-glychee/releases"><img src="https://img.shields.io/github/release/inoas/gleam-glychee" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/glychee)](https://hex.pm/packages/glychee)
+[![CI Test](https://github.com/inoas/gleam-glychee/actions/workflows/test.yml/badge.svg?branch=main&amp;event=push)](https://github.com/inoas/gleam-glychee/actions/workflows/test.yml)
+[![License](https://img.shields.io/hexpm/l/glychee)](https://github.com/inoas/gleam-glychee/blob/main/LICENCE)
 [![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
-[![CI Test](https://github.com/inoas/glychee/actions/workflows/test.yml/badge.svg?branch=main&amp;event=push)](https://github.com/inoas/glychee/actions/workflows/test.yml)
+
+<br>
+<br>
 
 A simple [Gleam](https://gleam.run) benchmark runner which wraps
 [**Benchee**](https://github.com/bencheeorg/benchee) for the heavy lifting.
@@ -21,7 +27,8 @@ Named after _Gleam_, _Benchee_ and their fruity [_Lychee_](https://en.wikipedia.
 - Requires **Gleam 1.0** or later.
 - For benchmarking on target JavaScript see <https://hex.pm/packages/gleamy_bench>,
   as Glychee only allows benchmarking on target Erlang.
-- Glychee is dependency free except for _Benchee_ and _Elixir_.
+- Glychee is **dependency free** except for _Benchee_ and _Elixir_, e.g. it may
+  be used to benchmark Gleam's stdlib.
 - A recent Elixir and Hex must be installed. You might be required to run
   `mix local.hex` after installing Elixir.
 
@@ -100,7 +107,3 @@ in one go.
 ## Documentation
 
 **Glychee**'s documentation can be found at <https://hexdocs.pm/glychee>.
-
-## License
-
-[Apache 2.0](./LICENSE)
