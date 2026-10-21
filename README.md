@@ -33,10 +33,11 @@ Named after _Gleam_, _Benchee_ and their fruity [_Lychee_](https://en.wikipedia.
 ## Quick start
 
 1. Add **_Glychee_** to your project: `gleam add glychee --dev`.
-2. Create a custom benchmarking module for example named `my_benchmark` that
-   contains a `main`-function. In that module you will define which `Function`s
-   to benchmark with one or many `Data`.
-3. Run the benchmark:
+2. Set up a module under `dev/` named `my_benchmark.gleam`
+   (or a name of your choice) and add a `main()`-function to it.
+3. Define the `Functions`s to benchmark with one or many `Data`
+   in the development modules `main()`-function.
+4. Run the benchmark:
 
    ```shell
    gleam clean && \
@@ -49,14 +50,14 @@ Named after _Gleam_, _Benchee_ and their fruity [_Lychee_](https://en.wikipedia.
 If you do not have a Gleam project yet, create it with:
 
 ```shell
-gleam new foobar
-cd foobar
+gleam new wibble
+cd wibble
 ```
 
 To add and run a demo of **Glychee**:
 
 1. `gleam add glychee --dev`
-2. In your project create a file named `src/my_benchmark.gleam` with following source code:
+2. In your project create a file under `dev/` named `my_benchmark.gleam` with following source code:
 
    ```gleam
    import gleam/int
@@ -69,7 +70,9 @@ To add and run a demo of **Glychee**:
      configuration.initialize()
      configuration.set_pair(configuration.Warmup, 2)
      configuration.set_pair(configuration.Parallel, 2)
-     
+   
+     let test_data = int.range(from: 100_000, to: 1, with: [], run: list.prepend)
+   
      // Run the benchmarks
      benchmark.run(
        [
@@ -78,11 +81,8 @@ To add and run a demo of **Glychee**:
          }),
        ],
        [
-         benchmark.Data(label: "pre-sorted list", data: list.range(1, 100_000)),
-         benchmark.Data(
-           label: "reversed list",
-           data: list.range(1, 100_000) |> list.reverse,
-         ),
+         benchmark.Data(label: "pre-sorted list", data: test_data),
+         benchmark.Data(label: "reversed list", data: test_data |> list.reverse),
        ],
      )
    }
